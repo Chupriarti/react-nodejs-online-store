@@ -3,6 +3,6 @@ const router = new Router();
 
 router.post('/registration', );
 router.post('/login', );
-router.post('/auth', );
+router.get('/auth', );
 
 module.exports = router;
