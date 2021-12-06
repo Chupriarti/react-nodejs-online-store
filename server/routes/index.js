@@ -6,9 +6,9 @@ const brandRouter = require('./brandRouter');
 const userRouter = require('./userRouter');
 const typeRouter = require('./typeRouter');
 
-router.user('/user', userRouter);
-router.user('/type', typeRouter);
-router.user('/brand', brandRouter);
-router.user('/device', deviceRouter);
+router.use('/user', userRouter);
+router.use('/type', typeRouter);
+router.use('/brand', brandRouter);
+router.use('/device', deviceRouter);
 
 module.exports = router;
