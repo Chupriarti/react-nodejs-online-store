@@ -35,7 +35,7 @@ class DeviceController {
             devices = await Device.findAll({where: {typeId, brandId}});
         }
 
-        return devices;
+        return res.json(devices);
     }
 
     async getOne (req, res) {
