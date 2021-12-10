@@ -1,6 +1,6 @@
 const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt');
-const {User, Basker} = require('../models/models');
+const {User, Basker, Basket} = require('../models/models');
 
 class UserController {
     async registration (req, res) {
@@ -16,6 +16,7 @@ class UserController {
 
         const hashPassword = await bcrypt.hash(password, 5);
         const user = await User.create({email, role, password});
+        const basket = await Basket.create({userId: user.id});
     }
 
     async login (req, res) {
