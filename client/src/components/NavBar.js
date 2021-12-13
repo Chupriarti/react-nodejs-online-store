@@ -1,17 +1,24 @@
 import React from 'react';
-import { Navbar, Nav} from 'react-bootstrap';
+import { Navbar, Nav, Button} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import { Context } from '..';
+import { SHOP_ROUTE } from '../utils/constansts';
 
 const NavBar = () => {
     const {user} = React.useContext(Context)
     return (
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">NavBar</Navbar.Brand>
-            <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
-            </Nav>
+            <NavLink style={{color: "white"}} to={SHOP_ROUTE}>Buy Device! - Shop</NavLink>
+            {user.isAuth ? 
+                <Nav className="ms-auto" style={{color: "white"}}>
+                    <Button variant={"outline-light"}>Admin Panel</Button>
+                    <Button variant={"outline-light"}>Logout</Button>
+                </Nav>
+                :
+                <Nav className="ms-auto" style={{color: "white"}}>
+                    <Button variant={"outline-light"}>Login</Button>
+                </Nav>            
+            }
         </Navbar>
     )
 }
