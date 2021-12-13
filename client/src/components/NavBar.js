@@ -1,10 +1,11 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Navbar, Nav, Button} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { Context } from '..';
 import { SHOP_ROUTE } from '../utils/constansts';
 
-const NavBar = () => {
+const NavBar = observer (() => {
     const {user} = React.useContext(Context)
     return (
         <Navbar bg="dark" variant="dark">
@@ -16,11 +17,11 @@ const NavBar = () => {
                 </Nav>
                 :
                 <Nav className="ms-auto" style={{color: "white"}}>
-                    <Button variant={"outline-light"}>Login</Button>
+                    <Button variant={"outline-light"} onClick={() => user.setIsAuth(true)}>Login</Button>
                 </Nav>            
             }
         </Navbar>
     )
-}
+});
 
 export default NavBar;
