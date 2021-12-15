@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container } from 'react-bootstrap';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 
 const Auth = () => {
     return (
@@ -8,7 +8,23 @@ const Auth = () => {
             style={{height: window.innerHeight - 54}}
         >
             <Card style={{width: 600}} className="p-5">
-                Auth
+                <h2 className="m-auto">Login</h2>
+                <Form className="d-flex flex-column">
+                <Form.Control
+                        className="mt-3"
+                        placeholder='Enter email...'
+                    />
+                    <Form.Control
+                        className="mt-3"
+                        placeholder='Enter password...'
+                    />
+                    <Button 
+                        className="mt-3 align-self-end" 
+                        variant={"outline-success"}
+                    >
+                        Enter
+                    </Button>
+                </Form>
             </Card>
         </Container>
     )
