@@ -28,6 +28,14 @@ export default class DeviceStore {
             {
                 id: 2, 
                 name: "Apple"
+            },
+            {
+                id: 3, 
+                name: "Lenovo"
+            },
+            {
+                id: 4, 
+                name: "Asus"
             }
         ];
         this._devices = [
