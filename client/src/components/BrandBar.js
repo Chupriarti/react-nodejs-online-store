@@ -7,9 +7,14 @@ const BrandBar = observer(() => {
     const {device} = React.useContext(Context);
     return (
         <Row className="d-flex">
-            <Card>Brand 1</Card>
-            <Card>Brand 2</Card>
-            <Card>Brand 3</Card>
+            {device.brands.map(brand => 
+                <Card
+                    key={brand.id}
+                    className="p-3"
+                >
+                    {brand.name}
+                </Card>
+            )}
         </Row>
     )
 });
