@@ -7,9 +7,11 @@ const TypeBar = observer(() => {
     const {device} = React.useContext(Context);
     return (
         <ListGroup>
-            <ListGroup.Item>Type 1</ListGroup.Item>
-            <ListGroup.Item>Type 1</ListGroup.Item>
-            <ListGroup.Item>Type 1</ListGroup.Item>
+            {device.types.map (type => 
+                <ListGroup.Item key={type.id}>
+                    {type.name}
+                </ListGroup.Item>
+            )}
         </ListGroup>
     )
 });
