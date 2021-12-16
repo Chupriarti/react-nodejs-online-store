@@ -10,6 +10,14 @@ export default class DeviceStore {
             {
                 id: 2, 
                 name: "Смартфоны"
+            },
+            {
+                id: 3, 
+                name: "Ноутбуки"
+            },
+            {
+                id: 4, 
+                name: "Телевизоры"
             }
         ];
         this._brands = [
