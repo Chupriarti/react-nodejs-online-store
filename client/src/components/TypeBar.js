@@ -8,7 +8,10 @@ const TypeBar = observer(() => {
     return (
         <ListGroup>
             {device.types.map (type => 
-                <ListGroup.Item key={type.id}>
+                <ListGroup.Item 
+                    onClick={() => device.setSelectedType(type)}
+                    key={type.id}
+                >
                     {type.name}
                 </ListGroup.Item>
             )}
