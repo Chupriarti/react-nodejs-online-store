@@ -41,32 +41,46 @@ export default class DeviceStore {
         this._devices = [
             {
                 id: 1, 
-                name: "iPhone 13", 
-                price: 30000,
-                rating: 5,
+                name: "iPhone 11", 
+                price: 10000,
+                rating: 2,
                 img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
             },
             {
                 id: 2, 
-                name: "iPhone 13", 
-                price: 30000,
-                rating: 5,
+                name: "iPhone 11 pro", 
+                price: 15000,
+                rating: 2,
                 img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
             },
             {
                 id: 3, 
+                name: "iPhone 12", 
+                price: 20000,
+                rating: 3,
+                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
+            },
+            {
+                id: 4, 
+                name: "iPhone 12 pro", 
+                price: 25000,
+                rating: 4,
+                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
+            },
+            {
+                id: 5, 
                 name: "iPhone 13", 
                 price: 30000,
                 rating: 5,
                 img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
             },
             {
-                id: 4, 
-                name: "iPhone 13", 
-                price: 30000,
+                id: 6, 
+                name: "iPhone 13 pro", 
+                price: 35000,
                 rating: 5,
                 img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            },
+            }
         ];
         this._selectedType = {};
         this._selectedBrand = {};
