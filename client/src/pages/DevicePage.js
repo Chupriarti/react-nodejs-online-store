@@ -10,6 +10,15 @@ const DevicePage = () => {
         rating: 2,
         img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
     };
+
+    const description = [
+        {id: 1, title: "Memory", description: "4 gb"},
+        {id: 2, title: "Camera", description: "16mp"},
+        {id: 3, title: "CPU", description: "ARM"},
+        {id: 4, title: "Cores", description: "4"},
+        {id: 5, title: "Battery", description: "5000mah"}
+    ]
+
     return (
         <Container className="mt-3">
             <Row>
