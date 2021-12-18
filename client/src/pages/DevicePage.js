@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import star from '../assets/star.png';
 
 const DevicePage = () => {
-    const device =             {
+    const device = {
         id: 1, 
         name: "iPhone 11", 
         price: 10000,
@@ -56,6 +56,14 @@ const DevicePage = () => {
                         <Button variant={"outline-dark"}>Add to basket</Button>
                     </Card>
                 </Col>
+            </Row>
+            <Row className="d-flex flex-column m-3">
+                <h1>Specifications</h1>
+                {description.map((info, index) => 
+                    <Row key={info.id} style={{background: index % 2 === 0 ? "lightgray" : "transparent", padding: 10}}>
+                        {info.title} : {info.description}
+                    </Row>
+                )}
             </Row>
         </Container>
     )
