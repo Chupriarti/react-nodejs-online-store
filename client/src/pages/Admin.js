@@ -25,7 +25,7 @@ const Admin = () => {
             >
                 Create device
             </Button>
-            <CreateType show={true} onHide={() => console.log("onHide")} />
+            <CreateType show={false} onHide={() => console.log("onHide")} />
             <CreateBrand show={false} onHide={() => console.log("onHide")} />
             <CreateDevice show={false} onHide={() => console.log("onHide")} />
         </Container>
