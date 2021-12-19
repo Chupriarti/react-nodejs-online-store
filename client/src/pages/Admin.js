@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import CreateBrand from '../components/modals/CreateBrand';
+import CreateDevice from '../components/modals/CreateDevice';
 import CreateType from '../components/modals/CreateType';
 
 const Admin = () => {
@@ -26,6 +27,7 @@ const Admin = () => {
             </Button>
             <CreateType show={true} onHide={() => console.log("onHide")} />
             <CreateBrand show={false} onHide={() => console.log("onHide")} />
+            <CreateDevice show={false} onHide={() => console.log("onHide")} />
         </Container>
     )
 }
