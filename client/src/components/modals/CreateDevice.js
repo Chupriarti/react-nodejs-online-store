@@ -19,7 +19,7 @@ const CreateDevice = ({show, onHide}) => {
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <Dropdown>
+                <Dropdown className="mt-3">
                         <Dropdown.Toggle>Select type</Dropdown.Toggle>
                         <Dropdown.Menu>
                             {device.types.map(type => 
@@ -27,7 +27,7 @@ const CreateDevice = ({show, onHide}) => {
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
-                    <Dropdown>
+                    <Dropdown className="mt-3">
                         <Dropdown.Toggle>Select brand</Dropdown.Toggle>
                         <Dropdown.Menu>
                             {device.brands.map(brand => 
@@ -36,9 +36,11 @@ const CreateDevice = ({show, onHide}) => {
                         </Dropdown.Menu>
                     </Dropdown>
                     <Form.Control
+                        className="mt-3"
                         placeholder={"Enter device name"}
                     />
                     <Form.Control
+                        className="mt-3"
                         placeholder={"Enter device price"}
                         type="number"
                     />
