@@ -18,6 +18,10 @@ const CreateDevice = ({show, onHide}) => {
         )
     }
 
+    const removeInfo = (number) => {
+        setInfo(info.filter(i => i.number !== number));
+    }
+
     return (
         <Modal
             show={show}
@@ -79,6 +83,14 @@ const CreateDevice = ({show, onHide}) => {
                                 <Form.Control
                                     placeholder={"Enter specification value"}
                                 />
+                            </Col>
+                            <Col md={4}>
+                                <Button
+                                    variant={"outline-danger"}
+                                    onClick={() => removeInfo(i.number)}
+                                >
+                                    Delete
+                                </Button>
                             </Col>
                         </Row>
                     )}
