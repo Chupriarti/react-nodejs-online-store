@@ -38,6 +38,10 @@ const CreateDevice = ({show, onHide}) => {
                     <Form.Control
                         placeholder={"Enter device name"}
                     />
+                    <Form.Control
+                        placeholder={"Enter device price"}
+                        type="number"
+                    />
                 </Form>
             </Modal.Body>
             <Modal.Footer>
