@@ -1,9 +1,22 @@
 import React from 'react';
-import { Button, Dropdown, Form, Modal } from 'react-bootstrap';
+import { Button, Col, Dropdown, Form, Modal, Row } from 'react-bootstrap';
 import { Context } from '../..';
 
 const CreateDevice = ({show, onHide}) => {
     const {device} = React.useContext(Context);
+    const [info, setInfo] = React.useState([]);
+
+    const addInfo = () => {
+        setInfo(
+            [...info, 
+                {
+                    title: '',
+                    description: '',
+                    number: Date.now()
+                }
+            ]
+        )
+    }
 
     return (
         <Modal
@@ -48,6 +61,27 @@ const CreateDevice = ({show, onHide}) => {
                         className="mt-3"
                         type="file"
                     />
+                    <hr/>
+                    <Button
+                        variant={"outline-dark"}
+                        onClick={addInfo}
+                    >
+                        Add new specification
+                    </Button>
+                    {info.map(i => 
+                        <Row className="mt-4" key={i.number}>
+                            <Col md={4}>
+                                <Form.Control
+                                    placeholder={"Enter specification title"}
+                                />
+                            </Col>
+                            <Col md={4}>
+                                <Form.Control
+                                    placeholder={"Enter specification value"}
+                                />
+                            </Col>
+                        </Row>
+                    )}
                 </Form>
             </Modal.Body>
             <Modal.Footer>
