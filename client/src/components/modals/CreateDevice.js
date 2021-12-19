@@ -42,6 +42,10 @@ const CreateDevice = ({show, onHide}) => {
                         placeholder={"Enter device price"}
                         type="number"
                     />
+                    <Form.Control
+                        className="mt-3"
+                        type="file"
+                    />
                 </Form>
             </Modal.Body>
             <Modal.Footer>
