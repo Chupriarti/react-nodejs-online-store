@@ -8,19 +8,19 @@ const Admin = () => {
                 variant={"outline-dark"} 
                 className="mt-4 p-2"
             >
-                Add type
+                Create type
             </Button>
             <Button 
                 variant={"outline-dark"} 
                 className="mt-4 p-2"
             >
-                Add brand
+                Create brand
             </Button>
             <Button 
                 variant={"outline-dark"} 
                 className="mt-4 p-2"
             >
-                Add device
+                Create device
             </Button>
         </Container>
     )
