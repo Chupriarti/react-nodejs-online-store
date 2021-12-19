@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
+import CreateType from '../components/modals/CreateType';
 
 const Admin = () => {
     return (
@@ -22,6 +23,7 @@ const Admin = () => {
             >
                 Create device
             </Button>
+            <CreateType show={true} onHide={() => console.log("onHide")} />
         </Container>
     )
 }
