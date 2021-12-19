@@ -27,6 +27,14 @@ const CreateDevice = ({show, onHide}) => {
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
+                    <Dropdown>
+                        <Dropdown.Toggle>Select brand</Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            {device.brands.map(brand => 
+                                <Dropdown.Item key={brand.id}>{brand.name}</Dropdown.Item>     
+                            )}
+                        </Dropdown.Menu>
+                    </Dropdown>
                     <Form.Control
                         placeholder={"Enter device name"}
                     />
