@@ -12,13 +12,13 @@ const generateJwt = (id, email, role) => {
 }
 
 class UserController {
-    async registration (req, res) {
+    async registration (req, res, next) {
         const {email, password, role} = req.body;
         if (!email || !password) {
             return next(ApiError.badRequest("Wrong email or password"));
         }
 
-        const candidate = await User.findAll({where: {email}});
+        const candidate = await User.findOne({where: {email}});
         if (candidate){
             return next(ApiError.badRequest("User is already exist"));
         }
