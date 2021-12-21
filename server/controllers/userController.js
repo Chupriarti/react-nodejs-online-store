@@ -1,6 +1,7 @@
 const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt');
 const {User, Basket} = require('../models/models');
+const jwt = require("jsonwebtoken");
 
 const generateJwt = (id, email, role) => {
     return jwt.sign
@@ -41,7 +42,7 @@ class UserController {
             return next(ApiError.internal("Invalid password")); 
         }
         const token = generateJwt(user.id, user.email, user.role);
-        return res.json(token);
+        return res.json({token});
     }
 
     async check (req, res, next) {
