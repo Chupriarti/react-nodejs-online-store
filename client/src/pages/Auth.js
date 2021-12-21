@@ -2,11 +2,13 @@ import React from 'react';
 import { Button, Card, Container, Form, Row } from 'react-bootstrap';
 import { NavLink, useLocation } from 'react-router-dom';
 import { login, registration } from '../http/userAPI';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/constansts';
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/constansts';
 import { observer } from 'mobx-react-lite';
 import { Context } from '..';
+import { useNavigate } from 'react-router-dom';
 
 const Auth = observer (() => {
+    const navigate = useNavigate();
     const {user} = React.useContext(Context)
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
@@ -23,6 +25,7 @@ const Auth = observer (() => {
             }
             user.setUser(data);
             user.setIsAuth(true);
+            navigate(SHOP_ROUTE)
         } catch (e) {
             alert(e.response.data.message)
         }
