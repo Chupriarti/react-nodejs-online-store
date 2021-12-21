@@ -14,14 +14,19 @@ const Auth = observer (() => {
     const [password, setPassword] = React.useState("");
 
     const onSubmit = async () => {
-        let data;
-        if (isLogin){
-            data = await login(email, password);
-        } else {
-            data = await registration(email, password);
+        try {
+            let data;
+            if (isLogin){
+                data = await login(email, password);
+            } else {
+                data = await registration(email, password);
+            }
+            user.setUser(data);
+            user.setIsAuth(true);
+        } catch (e) {
+            alert(e.response.data.message)
         }
-        user.setUser(data);
-        user.setIsAuth(true);
+
     }
 
     return (
