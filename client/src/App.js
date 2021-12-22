@@ -12,10 +12,12 @@ const App = observer(() => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    check().then(data => {
-      user.setUser(true);
-      user.setIsAuth(true);
-    }).finally(() => setLoading(false));
+    setTimeout(() => {
+      check().then(data => {
+        user.setUser(true);
+        user.setIsAuth(true);
+      }).finally(() => setLoading(false));
+    }, 1000)
   }, [])
 
   if (loading){
