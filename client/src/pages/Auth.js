@@ -1,11 +1,36 @@
 import React from 'react';
 import { Button, Card, Container, Form, Row } from 'react-bootstrap';
 import { NavLink, useLocation } from 'react-router-dom';
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/constansts';
+import { login, registration } from '../http/userAPI';
+import { LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/constansts';
+import { observer } from 'mobx-react-lite';
+import { Context } from '..';
+import { useNavigate } from 'react-router-dom';
 
-const Auth = () => {
+const Auth = observer (() => {
+    const navigate = useNavigate();
+    const {user} = React.useContext(Context)
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+
+    const onSubmit = async () => {
+        try {
+            let data;
+            if (isLogin){
+                data = await login(email, password);
+            } else {
+                data = await registration(email, password);
+            }
+            user.setUser(data);
+            user.setIsAuth(true);
+            navigate(SHOP_ROUTE)
+        } catch (e) {
+            alert(e.response.data.message)
+        }
+
+    }
 
     return (
         <Container 
@@ -18,10 +43,15 @@ const Auth = () => {
                     <Form.Control
                         className="mt-3"
                         placeholder='Enter email...'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <Form.Control
                         className="mt-3"
                         placeholder='Enter password...'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"
                     />
                     <Row className="d-flex justify-content-between mt-3 pl-3 pr-3">
                         {isLogin ?
@@ -35,6 +65,7 @@ const Auth = () => {
                         }
                         <Button 
                             variant={"outline-success"}
+                            onClick = {onSubmit}
                         >
                             {isLogin ? "Enter" : "Registration"}
                         </Button>
@@ -44,6 +75,6 @@ const Auth = () => {
             </Card>
         </Container>
     )
-}
+});
 
 export default Auth;
