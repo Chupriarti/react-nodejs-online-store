@@ -2,86 +2,9 @@ import { makeAutoObservable } from "mobx";
 
 export default class DeviceStore {
     constructor(){
-        this._types = [
-            {
-                id: 1, 
-                name: "Холодильники"
-            },
-            {
-                id: 2, 
-                name: "Смартфоны"
-            },
-            {
-                id: 3, 
-                name: "Ноутбуки"
-            },
-            {
-                id: 4, 
-                name: "Телевизоры"
-            }
-        ];
-        this._brands = [
-            {
-                id: 1, 
-                name: "Samsung"
-            },
-            {
-                id: 2, 
-                name: "Apple"
-            },
-            {
-                id: 3, 
-                name: "Lenovo"
-            },
-            {
-                id: 4, 
-                name: "Asus"
-            }
-        ];
-        this._devices = [
-            {
-                id: 1, 
-                name: "iPhone 11", 
-                price: 10000,
-                rating: 2,
-                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            },
-            {
-                id: 2, 
-                name: "iPhone 11 pro", 
-                price: 15000,
-                rating: 2,
-                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            },
-            {
-                id: 3, 
-                name: "iPhone 12", 
-                price: 20000,
-                rating: 3,
-                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            },
-            {
-                id: 4, 
-                name: "iPhone 12 pro", 
-                price: 25000,
-                rating: 4,
-                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            },
-            {
-                id: 5, 
-                name: "iPhone 13", 
-                price: 30000,
-                rating: 5,
-                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            },
-            {
-                id: 6, 
-                name: "iPhone 13 pro", 
-                price: 35000,
-                rating: 5,
-                img: "https://img.youtube.com/vi/-N1MQmJNGJU/maxresdefault.jpg"
-            }
-        ];
+        this._types = [];
+        this._brands = [];
+        this._devices = [];
         this._selectedType = {};
         this._selectedBrand = {};
         makeAutoObservable(this);
