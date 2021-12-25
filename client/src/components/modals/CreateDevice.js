@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Dropdown, Form, Modal, Row } from 'react-bootstrap';
 import { Context } from '../..';
+import { fetchTypes, fetchBrands } from '../../http/deviceAPI';
 
 const CreateDevice = ({show, onHide}) => {
     const {device} = React.useContext(Context);
@@ -10,6 +11,11 @@ const CreateDevice = ({show, onHide}) => {
     const [brand, setBrand] = React.useState(null);
     const [file, setFile] = React.useState(null);
     const [info, setInfo] = React.useState([]);
+
+    React.useEffect(() => {
+        fetchTypes().then(data => device.setTypes(data));
+        fetchBrands().then(data => device.setBrands(data));
+    }, [])
 
     const addInfo = () => {
         setInfo(
