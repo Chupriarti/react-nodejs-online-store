@@ -52,10 +52,15 @@ const CreateDevice = ({show, onHide}) => {
             <Modal.Body>
                 <Form>
                 <Dropdown className="mt-3">
-                        <Dropdown.Toggle>Select type</Dropdown.Toggle>
+                        <Dropdown.Toggle>{device.selectedType.name || "Select type"}</Dropdown.Toggle>
                         <Dropdown.Menu>
                             {device.types.map(type => 
-                                <Dropdown.Item key={type.id}>{type.name}</Dropdown.Item>     
+                                <Dropdown.Item 
+                                    onClick={() => device.setSelectedType(type)}
+                                    key={type.id}
+                                >
+                                    {type.name}
+                                </Dropdown.Item>     
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
