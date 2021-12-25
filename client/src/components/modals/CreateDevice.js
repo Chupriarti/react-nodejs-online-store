@@ -1,9 +1,10 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Button, Col, Dropdown, Form, Modal, Row } from 'react-bootstrap';
 import { Context } from '../..';
 import { fetchTypes, fetchBrands } from '../../http/deviceAPI';
 
-const CreateDevice = ({show, onHide}) => {
+const CreateDevice = observer(({show, onHide}) => {
     const {device} = React.useContext(Context);
     const [name, setName] = React.useState('');
     const [price, setPrice] = React.useState(0);
@@ -132,6 +133,6 @@ const CreateDevice = ({show, onHide}) => {
             </Modal.Footer>
         </Modal>
     )
-}
+});
 
 export default CreateDevice;
