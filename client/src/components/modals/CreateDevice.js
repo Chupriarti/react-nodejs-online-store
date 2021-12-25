@@ -8,8 +8,6 @@ const CreateDevice = observer(({show, onHide}) => {
     const {device} = React.useContext(Context);
     const [name, setName] = React.useState('');
     const [price, setPrice] = React.useState(0);
-    const [type, setType] = React.useState(null);
-    const [brand, setBrand] = React.useState(null);
     const [file, setFile] = React.useState(null);
     const [info, setInfo] = React.useState([]);
 
