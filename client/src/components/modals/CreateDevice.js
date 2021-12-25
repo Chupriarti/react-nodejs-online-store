@@ -65,10 +65,15 @@ const CreateDevice = ({show, onHide}) => {
                         </Dropdown.Menu>
                     </Dropdown>
                     <Dropdown className="mt-3">
-                        <Dropdown.Toggle>Select brand</Dropdown.Toggle>
+                        <Dropdown.Toggle>{device.selectedBrand.name || "Select brand"}</Dropdown.Toggle>
                         <Dropdown.Menu>
                             {device.brands.map(brand => 
-                                <Dropdown.Item key={brand.id}>{brand.name}</Dropdown.Item>     
+                                <Dropdown.Item 
+                                    onClick={() => device.setSelectedBrand(brand)}
+                                    key={brand.id}
+                                >
+                                    {brand.name}
+                                </Dropdown.Item>     
                             )}
                         </Dropdown.Menu>
                     </Dropdown>
