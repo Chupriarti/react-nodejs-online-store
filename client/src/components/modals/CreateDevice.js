@@ -62,6 +62,8 @@ const CreateDevice = ({show, onHide}) => {
                         </Dropdown.Menu>
                     </Dropdown>
                     <Form.Control
+                        value={name}
+                        onChange={e => setName(e.target.value)}
                         className="mt-3"
                         placeholder={"Enter device name"}
                     />
