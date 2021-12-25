@@ -69,7 +69,7 @@ const CreateDevice = ({show, onHide}) => {
                     />
                     <Form.Control
                         value={price}
-                        onChange={e => setPrice(e.target.value)}
+                        onChange={e => setPrice(Number(e.target.value))}
                         className="mt-3"
                         placeholder={"Enter device price"}
                         type="number"
