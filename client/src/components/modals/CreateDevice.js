@@ -34,6 +34,10 @@ const CreateDevice = observer(({show, onHide}) => {
         setInfo(info.filter(i => i.number !== number));
     }
 
+    const changeInfo = (key, value, number) => {
+        setInfo(info.map(i => i.number === number ? {...i, [key]: value} : i));
+    }
+
     const selectFile = e => {
         setFile(e.target.files[0]);
     }
@@ -107,11 +111,15 @@ const CreateDevice = observer(({show, onHide}) => {
                         <Row className="mt-4" key={i.number}>
                             <Col md={4}>
                                 <Form.Control
+                                    value={i.title}
+                                    onChange={(e) => changeInfo('title', e.target.value, i.number)}
                                     placeholder={"Enter specification title"}
                                 />
                             </Col>
                             <Col md={4}>
                                 <Form.Control
+                                    value={i.description}
+                                    onChange={(e) => changeInfo('description', e.target.value, i.number)}
                                     placeholder={"Enter specification value"}
                                 />
                             </Col>
