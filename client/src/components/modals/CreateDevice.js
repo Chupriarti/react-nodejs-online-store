@@ -27,6 +27,10 @@ const CreateDevice = ({show, onHide}) => {
         setInfo(info.filter(i => i.number !== number));
     }
 
+    const selectFile = e => {
+        setFile(e.target.files[0]);
+    }
+
     return (
         <Modal
             show={show}
@@ -69,6 +73,7 @@ const CreateDevice = ({show, onHide}) => {
                     <Form.Control
                         className="mt-3"
                         type="file"
+                        onChange={selectFile}
                     />
                     <hr/>
                     <Button
