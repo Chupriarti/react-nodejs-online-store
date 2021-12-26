@@ -14,11 +14,18 @@ const Shop = observer(() => {
     React.useEffect(() => {
         fetchTypes().then(data => device.setTypes(data))
         fetchBrands().then(data => device.setBrands(data))
-        fetchDevices().then(data => {
+        fetchDevices(null, null, 1, 2).then(data => {
             device.setDevices(data.rows);
             device.setTotalCount(data.count);
         })
     }, [])
+
+    React.useEffect(() => {
+        fetchDevices(device.selectedType.id, device.selectedBrand.id, device.page, 2).then(data => {
+            device.setDevices(data.rows);
+            device.setTotalCount(data.count);
+        })
+    }, [device.page])
 
     return (
         <Container>
