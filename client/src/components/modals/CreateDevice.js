@@ -40,6 +40,10 @@ const CreateDevice = observer(({show, onHide}) => {
         setFile(e.target.files[0]);
     }
 
+    const addDevice = () => {
+
+    }
+
     return (
         <Modal
             show={show}
@@ -135,7 +139,7 @@ const CreateDevice = observer(({show, onHide}) => {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant={"outline-danger"} onClick={onHide}>Close</Button>
-                <Button variant={"outline-success"} onClick={onHide}>Create</Button>
+                <Button variant={"outline-success"} onClick={addDevice}>Create</Button>
             </Modal.Footer>
         </Modal>
     )
