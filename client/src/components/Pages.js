@@ -1,11 +1,17 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
+import { Pagination } from 'react-bootstrap';
+import { Context } from '..';
 
 const Pages = observer(() => {
+    const {device} = React.useContext(Context);
+    const pages = [1, 2, 3, 4, 5];
     return (
-        <div>
-
-        </div>
+        <Pagination className="mt-5">
+            {pages.map(page => 
+                <Pagination.Item>{page}</Pagination.Item>    
+            )}
+        </Pagination>
     )
 });
 
