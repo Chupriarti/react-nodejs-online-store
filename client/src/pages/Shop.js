@@ -25,7 +25,7 @@ const Shop = observer(() => {
             device.setDevices(data.rows);
             device.setTotalCount(data.count);
         })
-    }, [device.page])
+    }, [device.page, device.selectedType, device.selectedBrand])
 
     return (
         <Container>
